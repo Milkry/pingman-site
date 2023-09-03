@@ -17,10 +17,16 @@
   <title>PingMan - Discord Bot</title>
 </head>
 
-<body>
+<body onload="onLoad()">
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
+  <noscript>
+    <div class="jsdisabled-alert">
+      It seems you have JavaScript disabled. For this website to load properly it requires JavaScript to be enabled.
+      Please enable it and refresh the page.
+    </div>
+  </noscript>
 
   <!-- Add Bot Button -->
   <div class="add-bot-container">
@@ -35,19 +41,19 @@
 
     <!-- Intro -->
     <section class="intro-container">
-      <div class="title-container d-flex justify-content-center align-items-center">
+      <div class="title-container reveal d-flex justify-content-center align-items-center">
         <h1>PingMan</h1>
         <img class="avatar" src="./assets/avatar.webp" alt="PingMan Avatar" width="150px" />
       </div>
 
-      <div class="description-container">
+      <div class="description-container reveal">
         <span class="opacity-75">
           PingMan is a discord bot that allows you to receive instant notifications for when your friends join a
           voice channel.
         </span>
       </div>
 
-      <div class="intro-buttons d-flex justify-content-center align-items-center">
+      <div class="intro-buttons reveal d-flex justify-content-center align-items-center">
         <button class="button secondary" onclick="scrollToView('features')"><i
             class="fa-solid fa-list-check fa-sm me-3"></i>Features</button>
         <button class="button secondary" onclick="scrollToView('commands')"><i
@@ -55,33 +61,57 @@
       </div>
     </section>
 
+    <!-- Guide -->
+    <section class="guide-container">
+      <h1 class="fw-bold text-center reveal">What can PingMan do?</h1>
+      <br />
+      <span class="reveal">In basic terms:</span>
+      <br />
+      <span class="reveal">
+        Given a voice channel and a list of people, PingMan can notify you whenever someone from that list joins the
+        given voice channel.
+      </span>
+      <br />
+      <span class="reveal">
+        When you <code>/subscribe</code> to a voice channel, a subscription is automatically created and you get added
+        to
+        the subscribers list for that voice channel. You and any other subscriber will receive a notification when one
+        of you joins.
+      </span>
+      <br />
+      <span class="reveal">
+        As soon as you or any other subscriber joins the voice channel, a notification is sent out to all the
+        subscribers letting them know that someone joined and is waiting for them.
+      </span>
+    </section>
+
     <!-- Features -->
     <section id="features" class="features-container">
-      <h1 class="fw-bold">Features</h1>
+      <h1 class="fw-bold text-center reveal">Features</h1>
       <br />
-      <ul>
-        <li>
+      <ul class="reveal">
+        <li class="reveal">
           <div class="feature">
             <i class="fa-solid fa-bell fa-2x m-3"></i>
             <span>Receive instant notifications when users join voice channels</span>
           </div>
         </li>
 
-        <li>
+        <li class="reveal">
           <div class="feature">
             <i class="fa-solid fa-gear fa-2x m-3"></i>
             <span>Customizable user settings</span>
           </div>
         </li>
 
-        <li>
+        <li class="reveal">
           <div class="feature">
             <i class="fa-solid fa-user fa-2x m-3"></i>
-            <span>Choose the users who can create subscriptions</span>
+            <span>Restrict which users can create or remove subscriptions</span>
           </div>
         </li>
 
-        <li>
+        <li class="reveal">
           <div class="feature">
             <i class="fa-solid fa-toggle-off fa-2x m-3"></i>
             <span>Toggle notifications for some or all subscriptions</span>
@@ -92,27 +122,31 @@
 
     <!-- Bot Commands -->
     <section id="commands" class="bot-commands-container">
-      <h1 class="fw-bold">Bot Commands</h1>
+      <h1 class="fw-bold text-center reveal">Bot Commands</h1>
       <br />
-      <ul class="d-flex flex-column">
-        <span class="text-center">A quick rundown:</span>
+      <ul class="d-flex flex-column reveal">
+        <span class="text-center reveal">A quick rundown of the main commands:</span>
         <br />
-        <li><span>Start by creating your first subscription via the <code>/subscribe</code> command.</span>
+        <li class="reveal"><span>Start by creating your first subscription via the <code>/subscribe</code>
+            command.</span>
         </li>
-        <li><span>You'll be prompted to choose between <strong>users</strong> and <strong>roles</strong> (e.g.
-            <code>/subscribe user</code> for subscribing individual users).</span></li>
-        <li><span>Unsubscribe users and roles via the <code>/unsubscribe</code> command.</span></li>
-        <li><span>View all your subscriptions via the <code>/status</code> command.</span></li>
+        <li class="reveal"><span>You'll be prompted to choose between <strong>users</strong> and <strong>roles</strong>
+            (e.g.
+            <code>/subscribe user</code> for subscribing individual users and <code>/subscribe role</code> for mass
+            notifications).</span>
+        </li>
+        <li class="reveal"><span>Unsubscribe users and roles via the <code>/unsubscribe</code> command.</span></li>
+        <li class="reveal"><span>View all your subscriptions via the <code>/status</code> command.</span></li>
         <br />
-        <span>Learn more via the built-in <code>/help</code> command.</span>
+        <span class="reveal">Learn more via the <code>/help</code> command.</span>
       </ul>
     </section>
 
     <!-- Feedback -->
     <section class="feedback-container">
-      <h1 class="fw-bold">Got a request?</h1>
+      <h1 class="fw-bold text-center reveal">Got a request?</h1>
       <br />
-      <span class="text-center">You can leave feedback or report any bugs via the <code>/feedback</code>
+      <span class="text-center reveal">You can leave feedback or report any bugs via the <code>/feedback</code>
         command.</span>
     </section>
 

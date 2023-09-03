@@ -20,6 +20,11 @@
 }
 
 section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 800px;
   padding: 0 1.5rem;
 
   &:nth-child(even) {
@@ -31,123 +36,133 @@ section {
   }
 }
 
-body {
-  .add-bot-container {
-    animation: fadeLeft ease-out 1.5s;
-    z-index: 99;
-    display: flex;
-    position: fixed;
-    top: 0;
-    right: 0;
-    border-bottom-left-radius: 15px;
-    background-color: var(--background-dark);
-    box-shadow: -1px 1px 2px 2px var(--background-dark--shadow);
-  }
+.reveal {
+  position: relative;
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: 1.5s all ease;
+}
 
-  .intro-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 25px;
-    height: 700px;
+.reveal.active {
+  transform: translateX(0);
+  opacity: 1;
+}
 
-    > .title-container {
-      padding: 15px;
+.jsdisabled-alert {
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+  font-size: 1.3rem;
+  text-align: center;
+  bottom: 0;
+  background-color: red;
+  padding: 2rem;
+}
 
-      .avatar {
-        margin-left: 25px;
-        border: 10px solid var(--background-alternate);
-        border-radius: 50%;
-      }
+.add-bot-container {
+  animation: fadeLeft ease-out 1.5s;
+  z-index: 99;
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border-bottom-left-radius: 15px;
+  background-color: var(--background-dark);
+  box-shadow: -1px 1px 2px 2px var(--background-dark--shadow);
+}
 
-      > h1 {
-        font-size: 3rem;
-        font-weight: bold;
-        padding: 2rem;
-      }
+.intro-container {
+  padding: 25px;
+
+  > .title-container {
+    padding: 15px;
+
+    .avatar {
+      margin-left: 25px;
+      border: 10px solid var(--background-alternate);
+      border-radius: 50%;
     }
 
-    > .description-container {
-      display: flex;
-      flex-direction: column;
-      margin: 20px;
-      max-width: 600px;
+    > h1 {
+      font-size: 3rem;
+      padding: 2rem;
+      font-weight: bold;
       text-align: center;
-
-      > h2 {
-        text-align: center;
-      }
-
-      > p {
-        font-size: 1.5rem;
-        padding: 2rem;
-      }
     }
   }
 
-  .features-container {
+  > .description-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    height: 800px;
+    margin: 20px;
+    max-width: 600px;
+    text-align: center;
 
-    .feature {
-      display: flex;
-      align-items: center;
+    > h2 {
+      text-align: center;
     }
 
-    > ul > li {
-      list-style-type: none;
-
-      > div > span {
-        font-size: 1.5rem;
-        text-align: left;
-      }
+    > p {
+      font-size: 1.5rem;
+      padding: 2rem;
     }
   }
+}
 
-  .bot-commands-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 800px;
-    font-size: 1.5rem;
-
-    > ul {
-      max-width: 800px;
-
-      > li {
-        padding: 0.5rem;
-      }
-    }
-  }
-
-  .feedback-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 800px;
+.guide-container {
+  > span {
+    max-width: 800px;
+    text-align: center;
     font-size: 1.5rem;
   }
+}
 
-  .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 1rem;
-  }
-
-  .social-media-container {
+.features-container {
+  .feature {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 2rem 2rem;
   }
+
+  > ul > li {
+    list-style-type: none;
+
+    > div > span {
+      font-size: 1.5rem;
+      text-align: left;
+    }
+  }
+}
+
+.bot-commands-container {
+  font-size: 1.5rem;
+
+  > ul {
+    max-width: 800px;
+
+    > li {
+      padding: 0.5rem;
+    }
+  }
+}
+
+.feedback-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+.footer {
+  padding: 1rem;
+  height: auto;
+}
+
+.social-media-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 2rem;
 }
 
 @media (max-width: 480px) {
@@ -179,6 +194,12 @@ body {
       > button {
         font-size: 1rem !important;
       }
+    }
+  }
+
+  .guide-container {
+    > span {
+      font-size: 1.1rem !important;
     }
   }
 
