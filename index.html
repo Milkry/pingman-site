@@ -4,29 +4,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="PingMan, a discord bot made by Milkry for getting instant notifications when a person joins a voice channel" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link type="text/css" href="./css/index.css" rel="stylesheet" />
   <link type="text/css" href="./css/buttons.css" rel="stylesheet" />
   <link type="text/css" href="./css/animations.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  <noscript>
+    <link type="text/css" href="./css/noscript.css" rel="stylesheet" />
+  </noscript>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet preconnect"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-  <script defer src="https://kit.fontawesome.com/63b079cbcf.js" crossorigin="anonymous"></script>
   <script defer src="./js/index.js"></script>
 
-  <title>PingMan - Discord Bot</title>
+  <!-- Font Awesome -->
+  <link href="./css/fontawesome.min.css" rel="stylesheet">
+  <link href="./css/brands.min.css" rel="stylesheet">
+  <link href="./css/solid.min.css" rel="stylesheet">
+
+  <title>PingMan - A discord bot with instant notifications for voice channels</title>
 </head>
 
 <body onload="onLoad()">
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
-  <noscript>
-    <div class="jsdisabled-alert">
-      It seems you have JavaScript disabled. For this website to load properly it requires JavaScript to be enabled.
-      Please enable it and refresh the page.
-    </div>
-  </noscript>
 
   <!-- Add Bot Button -->
   <div class="add-bot-container">
@@ -40,7 +42,7 @@
   <main>
 
     <!-- Intro -->
-    <section class="intro-container">
+    <section id="intro" class="intro-container">
       <div class="title-container reveal d-flex justify-content-center align-items-center">
         <h1>PingMan</h1>
         <img class="avatar" src="./assets/avatar.webp" alt="PingMan Avatar" width="150px" />
@@ -54,10 +56,8 @@
       </div>
 
       <div class="intro-buttons reveal d-flex justify-content-center align-items-center">
-        <button class="button secondary" onclick="scrollToView('features')"><i
-            class="fa-solid fa-list-check fa-sm me-3"></i>Features</button>
-        <button class="button secondary" onclick="scrollToView('commands')"><i
-            class="fa-solid fa-terminal fa-sm me-3"></i>Commands</button>
+        <a class="button secondary" href="#features"><i class="fa-solid fa-list-check fa-sm me-3"></i>Features</a>
+        <a class="button secondary" href="#commands"><i class="fa-solid fa-terminal fa-sm me-3"></i>Commands</a>
       </div>
     </section>
 
@@ -152,11 +152,12 @@
 
     <!-- Footer -->
     <section class="footer bg-dark">
-      <button class="button secondary" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up me-3"></i>Back to
-        top</button>
+      <a class="button secondary" href="#intro"><i class="fa-solid fa-arrow-up me-3"></i>Back to top</a>
 
       <div class="social-media-container">
-        <a href="https://github.com/Milkry" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></a>
+        <a href="https://github.com/Milkry" target="_blank" title="Github">
+          <i class="fa-brands fa-github fa-2xl"></i>
+        </a>
       </div>
 
       <div class="text-center">

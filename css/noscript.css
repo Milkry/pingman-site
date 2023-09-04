@@ -1,0 +1,9 @@
+.reveal {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    transition: none !important
+}
+
+.add-bot-container {
+    animation: none !important;
+}

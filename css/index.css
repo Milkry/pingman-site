@@ -48,17 +48,6 @@ section {
   opacity: 1;
 }
 
-.jsdisabled-alert {
-  z-index: 99;
-  position: fixed;
-  width: 100%;
-  font-size: 1.3rem;
-  text-align: center;
-  bottom: 0;
-  background-color: red;
-  padding: 2rem;
-}
-
 .add-bot-container {
   animation: fadeLeft ease-out 1.5s;
   z-index: 99;
@@ -230,5 +219,17 @@ section {
 
   .feedback-container {
     font-size: 1.1rem !important;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .reveal {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    transition: none !important
+  }
+
+  .add-bot-container {
+    animation: none !important;
   }
 }
