@@ -156,7 +156,7 @@ section {
 
 @media (max-width: 480px) {
   section {
-    padding: 0 0.5rem !important;
+    padding: 0 0.8rem !important;
   }
 
   .add-bot-container > a {
