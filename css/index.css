@@ -60,29 +60,6 @@ section {
   box-shadow: -1px 1px 2px 2px var(--background-dark--shadow);
 }
 
-.home-container {
-  z-index: 99;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 10px;
-  background-color: var(--background-dark);
-  box-shadow: 1px 1px 2px 2px var(--background-dark--shadow);
-  border-bottom-right-radius: 15px;
-
-  > a {
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-    color: var(--text-white);
-    text-decoration: none;
-
-    > img {
-      border-radius: 50%;
-    }
-  }
-}
-
 .intro-container {
   padding: 25px;
 
