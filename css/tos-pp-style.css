@@ -4,6 +4,14 @@ body {
     place-items: center;
     font-family: 'Source Sans Pro', Helvetica, sans-serif !important;
     font-size: 1.2rem !important;
+
+    a {
+        color: var(--primary);
+
+        &:hover {
+            color: var(--button-primary--hover);
+        }
+    }
 }
 
 .home-container {

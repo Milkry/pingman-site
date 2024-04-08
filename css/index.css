@@ -10,6 +10,7 @@
   --secondary-border: rgba(255, 255, 255, 0.55);
   --accent: #fbfbfb;
   --button-primary--hover: #9fd6d6;
+  --code: #DB82F2;
 }
 
 * {
@@ -17,6 +18,10 @@
   color: var(--text-white);
   font-family: 'Source Sans Pro', Helvetica, sans-serif;
   box-sizing: border-box;
+}
+
+code {
+  color: var(--code) !important;
 }
 
 section {
@@ -145,6 +150,14 @@ section {
 .footer {
   padding: 1rem;
   height: auto;
+
+  a {
+    color: var(--primary);
+
+    &:hover {
+      color: var(--button-primary--hover);
+    }
+  }
 }
 
 .social-media-container {
