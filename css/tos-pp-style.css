@@ -1,66 +1,189 @@
-body {
-    background-color: var(--background) !important;
-    display: grid;
-    place-items: center;
-    font-family: 'Source Sans Pro', Helvetica, sans-serif !important;
-    font-size: 1.2rem !important;
+/* Legal pages (Terms of Service, Privacy Policy) */
 
-    a {
-        color: var(--primary);
+.legal {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 20px 48px;
+    scroll-margin-top: 76px;
+}
 
-        &:hover {
-            color: var(--button-primary--hover);
-        }
+.legal .meta {
+    color: var(--dim);
+    font-size: 13px;
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.legal .meta b {
+    color: var(--teal);
+    font-weight: 700;
+}
+
+.legal h1 {
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin: 0 0 8px;
+}
+
+.legal .lede {
+    color: var(--dim);
+    font-size: 16px;
+    max-width: 60ch;
+    margin-bottom: 32px;
+}
+
+.legal h2 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 36px 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+    scroll-margin-top: 76px;
+}
+
+.legal h2::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    border-radius: 3px;
+    background: var(--teal);
+    flex: none;
+}
+
+/* Self-linking section headings */
+.legal h2 a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 9px;
+    transition: color 140ms ease;
+}
+
+.legal h2 a::after {
+    content: "#";
+    color: var(--teal);
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 140ms ease;
+}
+
+.legal h2 a:hover {
+    color: var(--teal);
+}
+
+.legal h2 a:hover::after {
+    opacity: 0.55;
+}
+
+.legal h2 a:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.legal h2 a:focus-visible::after {
+    opacity: 0.55;
+}
+
+.legal .paper {
+    background: var(--surf);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-top: 8px;
+}
+
+.legal .paper h2 {
+    margin-top: 28px;
+}
+
+.legal .paper h2:first-child {
+    margin-top: 0;
+}
+
+.legal .paper p {
+    color: var(--ink);
+    font-size: 15.5px;
+    line-height: 1.7;
+    margin: 0 0 14px;
+}
+
+.legal .paper p:last-child {
+    margin-bottom: 0;
+}
+
+.legal .paper ul {
+    color: var(--ink);
+    font-size: 15.5px;
+    line-height: 1.7;
+    padding-left: 1.25rem;
+    margin: 0 0 14px;
+}
+
+.legal .paper ul li {
+    margin-bottom: 8px;
+}
+
+.legal .paper ul li::marker {
+    color: var(--teal);
+}
+
+.legal .paper strong {
+    color: var(--ink);
+    font-weight: 700;
+}
+
+.legal .paper .contact {
+    color: var(--dim);
+    font-size: 14.5px;
+}
+
+.legal .paper .contact strong {
+    color: var(--teal);
+}
+
+.legal .cross-link {
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--dim);
+    text-align: center;
+    font-size: 14.5px;
+}
+
+.legal .cross-link a {
+    color: var(--teal);
+    font-weight: 600;
+}
+
+.legal .cross-link a:hover {
+    color: var(--button-primary--hover);
+}
+
+@media (max-width: 640px) {
+    .legal {
+        padding: 28px 14px 36px;
     }
-}
 
-.home-container {
-    z-index: 99;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 10px;
-    background-color: var(--background-dark);
-    box-shadow: 1px 1px 2px 2px var(--background-dark--shadow);
-    border-bottom-right-radius: 15px;
-
-    > a {
-        display: flex;
-        align-items: center;
-        font-size: 1.2rem;
-        color: var(--text-white);
-        text-decoration: none;
-
-        > img {
-            border-radius: 50%;
-        }
-    }
-}
-
-.tos-container,
-.pp-container {
-    max-width: 1280px;
-    padding: 1.2rem;
-    margin-top: 10dvh;
-}
-
-h1 {
-    font-weight: bold !important;
-    margin-bottom: 1.5rem !important;
-    margin-top: 1rem !important;
-}
-
-h3 {
-    font-weight: bold !important;
-}
-
-@media (max-width: 480px) {
-
-    h4 {
-        font-size: 1.1rem !important;
+    .legal h1 {
+        font-size: 28px;
     }
 
-    p {
-        font-size: 1rem !important;
+    .legal h2 {
+        font-size: 19px;
     }
+
+    .legal .paper {
+        padding: 20px 18px;
+    }
+
 }

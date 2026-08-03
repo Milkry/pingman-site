@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="PingMan, a discord bot made by Milkry for getting instant notifications when a person joins a voice channel" />
-  <meta name="theme-color" content="#bcf9f9" data-react-helmet="true" />
+  <meta name="theme-color" content="#7CE7DD" data-react-helmet="true" />
   <meta content="https://milkry.github.io/pingman-site/assets/avatar.webp" property="og:image" />
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -16,8 +16,6 @@
   <noscript>
     <link type="text/css" href="./css/noscript.css" rel="stylesheet" />
   </noscript>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet preconnect"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <script defer src="./js/index.js"></script>
 
   <!-- Font Awesome -->
@@ -29,154 +27,243 @@
 </head>
 
 <body onload="onLoad()">
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
 
-  <!-- Add Bot Button -->
-  <div class="add-bot-container">
-    <a class="button primary"
-      href="https://discord.com/api/oauth2/authorize?client_id=1048765007854305341&scope=applications.commands+bot&permissions=1526784"
-      target="_blank">
-      <i class="fa-brands fa-discord me-2"></i>Add PingMan
-    </a>
-  </div>
+  <!-- Top navigation -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#intro">
+        <img src="./assets/avatar-animated.webp" alt="" width="30" height="30" />
+        <span>PingMan</span>
+      </a>
 
-  <main>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-    <!-- Intro -->
-    <section id="intro" class="intro-container">
-      <div class="title-container reveal d-flex justify-content-center align-items-center">
-        <h1>PingMan</h1>
-        <img class="avatar" src="./assets/avatar-animated.webp" alt="PingMan Avatar" width="150px" />
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#features">Features</a>
+        <a href="#start">Setup</a>
+        <a href="#commands">Commands</a>
+        <a href="https://pingman-documentation.pages.dev/" target="_blank" rel="noopener">Docs</a>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <a class="nav-minor" href="./pages/terms-of-service.html">Terms</a>
+        <a class="nav-minor" href="./pages/privacy-policy.html">Privacy</a>
+        <a class="nav-cta button primary"
+          href="https://discord.com/api/oauth2/authorize?client_id=1048765007854305341&scope=applications.commands+bot&permissions=1526784"
+          target="_blank" rel="noopener">
+          <i class="fa-brands fa-discord me-2"></i>Add PingMan
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <!-- Hero -->
+    <section id="intro" class="stage reveal">
+      <div class="rings">
+        <img src="./assets/avatar-animated.webp" alt="PingMan avatar" width="180" height="180" />
       </div>
-
-      <div class="description-container reveal">
-        <span class="opacity-75">
-          PingMan is a discord bot that allows you to receive instant notifications for when your friends join a
-          voice channel.
-        </span>
+      <h1>PingMan</h1>
+      <p class="tag">
+        Instant notifications when someone joins a voice channel.
+        Set and forget.
+      </p>
+      <div class="stats">
+        <span class="pill"><b>1</b> command to set up</span>
+        <span class="pill"><b>3</b> trigger modes</span>
+        <span class="pill">Free</span>
       </div>
-
-      <div class="intro-buttons reveal d-flex justify-content-center align-items-center">
-        <a class="button secondary" href="#features"><i class="fa-solid fa-list-check fa-sm me-3"></i>Features</a>
-        <a class="button secondary" href="#commands"><i class="fa-solid fa-terminal fa-sm me-3"></i>Commands</a>
+      <div class="stage-cta">
+        <a class="button primary"
+          href="https://discord.com/api/oauth2/authorize?client_id=1048765007854305341&scope=applications.commands+bot&permissions=1526784"
+          target="_blank" rel="noopener">
+          <i class="fa-brands fa-discord me-2"></i>Add PingMan
+        </a>
+        <a class="button secondary" href="#start">
+          <i class="fa-solid fa-bolt fa-sm me-2"></i>How it works
+        </a>
       </div>
-    </section>
-
-    <!-- Guide -->
-    <section class="guide-container">
-      <h1 class="fw-bold text-center reveal">What can PingMan do?</h1>
-      <br />
-      <span class="reveal">In basic terms:</span>
-      <br />
-      <span class="reveal">
-        Given a voice channel and a list of people, PingMan can notify you whenever someone from that list joins the
-        given voice channel.
-      </span>
-      <br />
-      <span class="reveal">
-        When you <code>/subscribe</code> to a voice channel, a subscription is automatically created and you get added
-        to
-        the subscribers list for that voice channel. You and any other subscriber will receive a notification when one
-        of you joins.
-      </span>
-      <br />
-      <span class="reveal">
-        As soon as you or any other subscriber joins the voice channel, a notification is sent out to all the
-        subscribers letting them know that someone joined and is waiting for them.
-      </span>
     </section>
 
     <!-- Features -->
-    <section id="features" class="features-container">
-      <h1 class="fw-bold text-center reveal">Features</h1>
-      <br />
-      <ul class="reveal">
-        <li class="reveal">
-          <div class="feature">
-            <i class="fa-solid fa-bell fa-2x m-3"></i>
-            <span>Receive instant notifications when users join voice channels</span>
-          </div>
-        </li>
-
-        <li class="reveal">
-          <div class="feature">
-            <i class="fa-solid fa-gear fa-2x m-3"></i>
-            <span>Customizable user settings</span>
-          </div>
-        </li>
-
-        <li class="reveal">
-          <div class="feature">
-            <i class="fa-solid fa-user fa-2x m-3"></i>
-            <span>Restrict which users can create or remove subscriptions</span>
-          </div>
-        </li>
-
-        <li class="reveal">
-          <div class="feature">
-            <i class="fa-solid fa-toggle-off fa-2x m-3"></i>
-            <span>Toggle notifications for some or all subscriptions</span>
-          </div>
-        </li>
-      </ul>
+    <section id="features" class="block">
+      <h2 class="reveal"><a href="#features">Features</a></h2>
+      <div class="toasts">
+        <div class="toast reveal">
+          <b><i class="fa-solid fa-bell me-2"></i>Smart subscriptions</b>
+          <p>Pick who <em>triggers</em> a ping (any member, specific users, or roles) and who <em>gets</em> the ping
+            (<code>@everyone</code>, <code>@here</code>, or a curated list).</p>
+        </div>
+        <div class="toast reveal">
+          <b><i class="fa-solid fa-comments me-2"></i>Send pings anywhere</b>
+          <p>Route notifications to a dedicated text channel instead of cluttering the voice channel's chat.</p>
+        </div>
+        <div class="toast reveal">
+          <b><i class="fa-solid fa-hourglass-half me-2"></i>Cooldowns</b>
+          <p>Set a per-channel cooldown to silence join waves and keep notifications from spamming the channel.</p>
+        </div>
+        <div class="toast reveal">
+          <b><i class="fa-solid fa-user-check me-2"></i>First-join mode</b>
+          <p>Ping on every join, or only when the <em>first</em> triggering member arrives in an empty channel.</p>
+        </div>
+        <div class="toast reveal">
+          <b><i class="fa-solid fa-shield-halved me-2"></i>Server controls</b>
+          <p><code>/status</code> to audit every subscription, <code>/global</code> to pause the whole server,
+            <code>/access</code> to delegate management to roles.</p>
+        </div>
+        <div class="toast reveal">
+          <b><i class="fa-solid fa-user-gear me-2"></i>Per-user settings</b>
+          <p>Mute yourself across every server with <code>/settings</code>, or opt out of being added to subscriptions
+            entirely.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Bot Commands -->
-    <section id="commands" class="bot-commands-container">
-      <h1 class="fw-bold text-center reveal">Bot Commands</h1>
-      <br />
-      <span class="text-center reveal">A quick rundown of the main commands:</span>
-      <br />
-      <ul class="d-flex flex-column reveal">
-        <li class="reveal"><span>Start by creating your first subscription via the <code>/subscribe</code>
-            command.</span>
-        </li>
-        <li class="reveal"><span>You'll be prompted to choose between <strong>users</strong> and <strong>roles</strong>
-            (e.g.
-            <code>/subscribe user</code> for subscribing individual users and <code>/subscribe role</code> for mass
-            notifications).</span>
-        </li>
-        <li class="reveal"><span>Unsubscribe users and roles via the <code>/unsubscribe</code> command.</span></li>
-        <li class="reveal"><span>View all your subscriptions via the <code>/status</code> command.</span></li>
-      </ul>
-      <br />
-      <span class="reveal">Learn more via the <code>/help</code> command.</span>
+    <!-- Get going -->
+    <section id="start" class="block">
+      <h2 class="reveal"><a href="#start">Get going in 60 seconds</a></h2>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-head">
+            <span class="num">1</span>
+            <b>Invite the bot</b>
+          </div>
+          <p>Click
+            <a
+              href="https://discord.com/api/oauth2/authorize?client_id=1048765007854305341&scope=applications.commands+bot&permissions=1526784"
+              target="_blank" rel="noopener">Add PingMan</a>
+            and pick your server.
+          </p>
+        </div>
+        <div class="step reveal">
+          <div class="step-head">
+            <span class="num">2</span>
+            <b>Run <code>/setup-channel</code></b>
+          </div>
+          <p>A short wizard walks you through triggers, recipients, and cooldowns.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-head">
+            <span class="num">3</span>
+            <b>You're done</b>
+          </div>
+          <p>PingMan now notifies the right people whenever someone joins a voice channel.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Feedback -->
-    <section class="feedback-container">
-      <h1 class="fw-bold text-center reveal">Got a request?</h1>
-      <br />
-      <span class="text-center reveal">You can leave feedback or report any bugs via the <code>/feedback</code>
-        command.</span>
+    <!-- Gallery -->
+    <section id="gallery" class="block">
+      <h2 class="reveal"><a href="#gallery">See it in action</a></h2>
+      <div class="gallery">
+        <div class="frame reveal">
+          <div class="caption"><span class="kbd">/setup-channel</span> Configure a channel</div>
+          <a class="zoom" href="https://i.imgur.com/pDYm8Wl.png" target="_blank" rel="noopener"
+            aria-label="Enlarge: setup-channel wizard">
+            <img src="https://i.imgur.com/pDYm8Wl.png" alt="setup-channel wizard" loading="lazy" />
+            <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </a>
+        </div>
+        <div class="frame reveal">
+          <div class="caption"><i class="fa-solid fa-bell me-1"></i>Notification arrives in the voice chat</div>
+          <a class="zoom" href="https://i.imgur.com/9Ma19w7.png" target="_blank" rel="noopener"
+            aria-label="Enlarge: notification example">
+            <img src="https://i.imgur.com/9Ma19w7.png" alt="notification example" loading="lazy" />
+            <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </a>
+        </div>
+        <div class="frame reveal">
+          <div class="caption"><i class="fa-solid fa-magnifying-glass me-1"></i>Inspect a single subscription</div>
+          <a class="zoom" href="https://i.imgur.com/ZPO0AvC.gif" target="_blank" rel="noopener"
+            aria-label="Enlarge: view subscription details">
+            <img src="https://i.imgur.com/ZPO0AvC.gif" alt="view subscription details" loading="lazy" />
+            <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </a>
+        </div>
+        <div class="frame reveal">
+          <div class="caption"><span class="kbd">/status</span> View every subscription</div>
+          <a class="zoom" href="https://i.imgur.com/Dm2w40b.gif" target="_blank" rel="noopener"
+            aria-label="Enlarge: view all subscriptions">
+            <img src="https://i.imgur.com/Dm2w40b.gif" alt="view all subscriptions" loading="lazy" />
+            <span class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learn more -->
+    <section id="docs" class="block">
+      <h2 class="reveal"><a href="#docs">Learn more</a></h2>
+      <div class="docs reveal">
+        <div class="icon"><i class="fa-solid fa-book"></i></div>
+        <div class="txt">
+          <b>Full documentation</b>
+          <p>Guides, command reference, and setup walkthroughs at
+            <a href="https://pingman-documentation.pages.dev/" target="_blank" rel="noopener">pingman-documentation.pages.dev</a>.
+          </p>
+        </div>
+        <div class="lnks">
+          <a class="button secondary button--medium" href="https://pingman-documentation.pages.dev/getting-started/"
+            target="_blank" rel="noopener">Getting started</a>
+          <a class="button secondary button--medium" href="https://discord.gg/tugp3ftFcK" target="_blank" rel="noopener">
+            <i class="fa-brands fa-discord me-2"></i>Support server
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Commands -->
+    <section id="commands" class="block">
+      <h2 class="reveal"><a href="#commands">Commands</a></h2>
+      <div class="cmds reveal">
+        <div class="cmd"><code>/setup-channel</code><span>Create, edit, or remove a voice channel subscription</span></div>
+        <div class="cmd"><code>/status</code><span>View all subscriptions in the server</span></div>
+        <div class="cmd"><code>/access</code><span>Control who can manage subscriptions</span></div>
+        <div class="cmd"><code>/settings</code><span>Manage your personal, cross-server preferences</span></div>
+        <div class="cmd"><code>/global</code><span>Pause or resume every subscription server-wide</span></div>
+        <div class="cmd"><code>/help</code><span>Full command reference</span></div>
+        <div class="cmd"><code>/feedback</code><span>Send a suggestion or bug report</span></div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <section class="footer bg-dark">
-      <a class="button secondary" href="#intro"><i class="fa-solid fa-arrow-up me-3"></i>Back to top</a>
+    <footer class="footer">
+      <a class="button secondary button--medium" href="#intro"><i class="fa-solid fa-arrow-up me-2"></i>Back to top</a>
 
       <div class="social-media-container">
-        <a href="https://github.com/Milkry" target="_blank" title="Github">
+        <a href="https://github.com/Milkry" target="_blank" title="Github" rel="noopener">
           <i class="fa-brands fa-github fa-2xl"></i>
         </a>
       </div>
 
-      <div>
+      <div class="footer-links">
         <a href="./pages/terms-of-service.html" title="Terms of Service">Terms of Service</a>
         <span class="opacity-50">|</span>
         <a href="./pages/privacy-policy.html" title="Privacy Policy">Privacy Policy</a>
       </div>
 
-      <div class="text-center p-3">
+      <div class="footer-copy">
         <span>&copy; 2026 PingMan Bot.</span>
         <br />
         <span>All Rights Reserved.</span>
+        <br />
+        <span class="made-with">Made with <span class="heart">&#128156;</span></span>
       </div>
-    </section>
+    </footer>
 
   </main>
+
+  <!-- Image lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden>
+    <button class="lightbox-close" type="button" aria-label="Close preview">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <figure class="lightbox-inner">
+      <img id="lightbox-img" src="" alt="" />
+      <figcaption id="lightbox-cap"></figcaption>
+    </figure>
+  </div>
 </body>
 
 </html>

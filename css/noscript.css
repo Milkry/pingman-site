@@ -1,9 +1,16 @@
 .reveal {
-    transform: translateX(0) !important;
+    transform: none !important;
     opacity: 1 !important;
     transition: none !important
 }
 
-.add-bot-container {
-    animation: none !important;
+/* Without JS the mobile drawer can't be toggled, so keep the links inline */
+.nav-toggle {
+    display: none !important;
+}
+
+.nav-menu {
+    display: flex !important;
+    position: static !important;
+    flex-wrap: wrap !important;
 }
